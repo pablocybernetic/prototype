@@ -26,7 +26,9 @@ void main() async {
       options: DefaultFirebaseOptions.currentPlatform,
     );
   }
-
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(
     MultiProvider(
       providers: [

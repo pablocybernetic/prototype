@@ -408,6 +408,8 @@ class _LoginPageState extends State<LoginPage> {
 
     // Navigate to the home page if the user is signed in
     if (userCredential.user != null) {
+      final prefs = await SharedPreferences.getInstance();
+      prefs.setBool('login', true);
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => HomePage()),
